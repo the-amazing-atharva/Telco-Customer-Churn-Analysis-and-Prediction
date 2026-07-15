@@ -506,23 +506,6 @@ elif page == "ML Model Performance":
     st.code(classification_report(y_test, y_pred_rf))
     st.info("**Business Insight**: Random Forest achieved slightly lower accuracy (79.3%) and recall (50%) for the churn class compared to Logistic Regression. Further hyperparameter tuning might improve its performance.")
 
-    st.subheader("XGBoost Classifier")
-    xgb_model = xgb.XGBClassifier(
-        objective='binary:logistic', eval_metric='logloss', use_label_encoder=False, random_state=42)
-    xgb_model.fit(X_train, y_train)
-    y_pred_xgb = xgb_model.predict(X_test)
-    y_proba_xgb = xgb_model.predict_proba(X_test)[:, 1]
-
-    st.write(f"Accuracy: {accuracy_score(y_test, y_pred_xgb):.4f}")
-    st.write(f"Precision (Churn): {precision_score(y_test, y_pred_xgb):.4f}")
-    st.write(f"Recall (Churn): {recall_score(y_test, y_pred_xgb):.4f}")
-    st.write(f"F1-Score (Churn): {f1_score(y_test, y_pred_xgb):.4f}")
-    st.write(f"ROC AUC Score: {roc_auc_score(y_test, y_proba_xgb):.4f}")
-    st.dataframe(pd.DataFrame(confusion_matrix(y_test, y_pred_xgb), index=[
-                 'Actual No Churn', 'Actual Churn'], columns=['Predicted No Churn', 'Predicted Churn']))
-    st.code(classification_report(y_test, y_pred_xgb))
-    st.info("**Business Insight**: XGBoost performed the lowest among the three models in this run, with an accuracy of 77.1% and a churn recall of 53%. Like Random Forest, it often benefits significantly from careful hyperparameter tuning and handling of class imbalance.")
-
 elif page == "Key Insights and Recommendations":
     st.header("Key Insights and Recommendations")
     st.markdown("""
