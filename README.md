@@ -6,6 +6,10 @@ This project focuses on analyzing customer churn in a telecommunications company
 ## 2. Dataset
 The dataset used for this analysis is the `Telco Customer Churn` dataset, which contains information about 7,032 customers. It includes 20 features covering demographic information, services subscribed to, contract details, and payment information, along with a `Churn` target variable indicating whether a customer left the company.
 
+<img width="1700" height="367" alt="image" src="https://github.com/user-attachments/assets/31df09fd-7574-49cb-89de-da00e4aa66e0" />
+
+
+
 ## 3. Problem Statement
 The primary goal is to identify factors influencing customer churn and build predictive models to accurately forecast which customers are likely to churn. This will enable the Telco company to proactively intervene with retention strategies.
 
@@ -22,6 +26,9 @@ The primary goal is to identify factors influencing customer churn and build pre
 -   The `TotalCharges` column, initially an `object` type, was converted to `numeric`, and 11 rows with missing values (represented as spaces) were dropped.
 -   The `customerID` column was removed as it's not relevant for prediction.
 -   The target variable `Churn` showed an imbalance: **73.4%** 'No' (non-churn) and **26.6%** 'Yes' (churn).
+
+<img width="448" height="606" alt="image" src="https://github.com/user-attachments/assets/6c152005-adb1-4ff5-8d8f-f6d964ba13c2" />
+
 
 ### 5.2 Exploratory Data Analysis (EDA) & Visualization
 Extensive visualization was performed to understand the relationship between various features and churn:
@@ -41,6 +48,11 @@ Extensive visualization was performed to understand the relationship between var
 -   **Monthly Charges**: Customers with higher monthly charges (peaking around **$80-$100** for churners) tend to churn more.
 -   **Total Charges**: Churning customers generally have lower total charges (peaking around **$100-$500**), consistent with shorter tenure.
 -   **Correlation Heatmap**: Confirmed strong positive correlations between churn and `Month-to-month contract`, `InternetService_Fiber optic`, `PaperlessBilling`, and `PaymentMethod_Electronic check`. Strong negative correlations were observed with `Tenure`, `Contract_Two year`, `OnlineSecurity`, and `TechSupport`.
+
+<img width="1790" height="1801" alt="image" src="https://github.com/user-attachments/assets/052e2033-2b39-4d9b-b817-0aa519f2ea4a" />
+
+<img width="1885" height="944" alt="image" src="https://github.com/user-attachments/assets/0b912c06-47f2-446d-bda7-0ef97f027fce" />
+
 
 ### 5.3 Data Preprocessing for Machine Learning
 -   **Encoding**: Binary categorical features (`Partner`, `Dependents`, `PhoneService`, `PaperlessBilling`, `gender`, `Churn`) were mapped to 0/1. Multi-class features (`InternetService`, `Contract`, `PaymentMethod`) were one-hot encoded.
@@ -72,6 +84,9 @@ Three classification models were trained and evaluated:
     -   ROC AUC: **0.8114**
 
 **Model Comparison**: In this specific execution, **Logistic Regression** performed the best across key metrics (Accuracy, Recall, F1-Score, ROC AUC) for the churn class. This suggests it provides a strong baseline for churn prediction given the dataset and preprocessing steps.
+
+<img width="576" height="497" alt="image" src="https://github.com/user-attachments/assets/e9f8c8a0-e144-410d-b15a-4848f613ca8a" />
+
 
 ## 6. Key Insights and Recommendations
 
