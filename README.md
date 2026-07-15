@@ -1,5 +1,7 @@
 # Telco Customer Churn Analysis
 
+### Dashboard Link : https://telco-customer-churn-analysis-and-prediction-atharva-salitri.streamlit.app/
+
 ## 1. Project Overview
 
 This project focuses on analyzing customer churn in a telecommunications company. Customer churn, the phenomenon of customers discontinuing their service, is a critical business problem for Telco companies as it directly impacts revenue and profitability. By understanding the factors contributing to churn, the company can develop targeted strategies to retain valuable customers.
@@ -94,6 +96,8 @@ Three classification models were trained and evaluated:
 ### 📊 5.5 Streamlit Dashboard for Interactive Visualisations
 
 This Streamlit dashboard offers an interactive platform for a comprehensive analysis of customer churn in a telecommunications company. It visualizes key churn drivers, showcases machine learning model performance, and outlines actionable recommendations, all based on the in-depth analysis conducted in this notebook.
+
+Dashboard Link : https://telco-customer-churn-analysis-and-prediction-atharva-salitri.streamlit.app/
 
 #### 🚀 Features
 
